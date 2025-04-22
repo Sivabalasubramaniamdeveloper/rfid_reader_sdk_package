@@ -30,7 +30,6 @@ class _FindPageState extends State<FindPage> {
     _RfidReaderSdkPlugin.findTheTag('BDBD0134000000000013B747');
     _RfidReaderSdkPlugin.findingTag.listen((event) {
       final result = jsonDecode(event.toString());
-
       log(result.toString());
     });
   }
