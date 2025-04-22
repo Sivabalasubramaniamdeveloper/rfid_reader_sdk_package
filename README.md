@@ -5,6 +5,7 @@ RFID Reader SDK plugin for Flutter.
 [//]: # (<img src="https://github.com/yagmure15/rfid_reader_sdk/raw/main/site/_rfd8500.png" alt="Zebra RFID Reader SDK Logo" width="300">)
 
 
+
 ## Android Setup 🔧
 
 ### Be Sure minSdkVersion 19 or Higher
