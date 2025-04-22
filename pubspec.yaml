@@ -21,7 +21,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.borda.rfid_reader_sdk
+        package: com.datayaan.rfid_reader_sdk
         pluginClass: ZebraRfidReaderSdkPlugin
       ios:
         pluginClass: ZebraRfidReaderSdkPlugin

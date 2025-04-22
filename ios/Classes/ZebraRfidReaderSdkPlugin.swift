@@ -10,7 +10,7 @@ public class ZebraRfidReaderSdkPlugin: NSObject, FlutterPlugin {
   let api: srfidISdkApi = ZebraApi.shared
 
   public static func register(with registrar: FlutterPluginRegistrar) {
-    let channel = FlutterMethodChannel(name: "borda/rfid_reader_sdk", binaryMessenger: registrar.messenger())
+    let channel = FlutterMethodChannel(name: "datayaan/rfid_reader_sdk", binaryMessenger: registrar.messenger())
     let instance = ZebraRfidReaderSdkPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
     instance.initializeSdkComponents()

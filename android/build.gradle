@@ -1,4 +1,4 @@
-group 'com.borda.rfid_reader_sdk'
+group 'com.datayaan.rfid_reader_sdk'
 version '1.0-SNAPSHOT'
 
 buildscript {

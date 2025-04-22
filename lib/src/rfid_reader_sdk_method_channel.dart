@@ -8,7 +8,7 @@ import 'rfid_reader_sdk_platform_interface.dart';
 
 /// An implementation of [ZebraRfidReaderSdkPlatform] that uses method channels.
 class MethodChannelZebraRfidReaderSdk extends ZebraRfidReaderSdkPlatform {
-  final _methodChannel = const MethodChannel('borda/rfid_reader_sdk');
+  final _methodChannel = const MethodChannel('datayaan/rfid_reader_sdk');
   final EventChannel _eventChannel = const EventChannel("tagHandlerEvent");
   final EventChannel _tagFindingEventChannel = const EventChannel("tagFindingEvent");
   final EventChannel _readTagsEventChannel = const EventChannel("readTagEvent");
