@@ -1,7 +1,7 @@
 name: rfid_reader_sdk
 description: RFID Reader SDK plugin for Flutter, providing seamless integration with RFID readers.
-version: 0.0.2
-homepage: https://github.com/yagmure15/rfid_reader_sdk.git
+version: 0.0.1
+homepage: https://github.com/Sivabalasubramaniamdeveloper/rfid_reader_sdk_package.git
 
 environment:
   sdk: '>=2.19.2 <4.0.0'
