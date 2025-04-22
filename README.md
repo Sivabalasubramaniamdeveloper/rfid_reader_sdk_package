@@ -170,6 +170,7 @@ _zebraRfidReaderSdkPlugin.connectedReaderDevice.listen((event) {
     });
 ```
 
+
 ### Tag Locationing
 You can search for any tag with a specific pattern.
 ```dart
