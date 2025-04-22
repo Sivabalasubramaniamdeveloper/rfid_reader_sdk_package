@@ -19,7 +19,7 @@ class SingleTag extends StatefulWidget {
 }
 
 class _SingleTagState extends State<SingleTag> {
-  final _zebraRfidReaderSdkPlugin = ZebraRfidReaderSdk();
+  final _RfidReaderSdkPlugin = ZebraRfidReaderSdk();
   ReaderDevice connectedReader = ReaderDevice.initial();
   String distance = "";
   @override
@@ -66,16 +66,16 @@ class _SingleTagState extends State<SingleTag> {
   }
 
   Future<void> stopFindingTheTag() async {
-    await _zebraRfidReaderSdkPlugin.stopFindingTheTag();
+    await _RfidReaderSdkPlugin.stopFindingTheTag();
   }
 
   Future<void> findTheTag(String tagId) async {
     print("Finding tag: $tagId");
 
     // Start finding the tag
-    await _zebraRfidReaderSdkPlugin.findTheTag(tagId);
-    _zebraRfidReaderSdkPlugin.findingTag.listen((event) {});
-    _zebraRfidReaderSdkPlugin.connectedReaderDevice.listen((event) {
+    await _RfidReaderSdkPlugin.findTheTag(tagId);
+    _RfidReaderSdkPlugin.findingTag.listen((event) {});
+    _RfidReaderSdkPlugin.connectedReaderDevice.listen((event) {
       final result = jsonDecode(event.toString());
       print("resultsssssssssssssssssssssssssssssssss");
       print(event);
@@ -84,17 +84,17 @@ class _SingleTagState extends State<SingleTag> {
       print(result);
       print(result);
 
-      // _zebraRfidReaderSdkPlugin.readTags.forEach((action){
+      // _RfidReaderSdkPlugin.readTags.forEach((action){
       //   print(action);
       // });
-      // _zebraRfidReaderSdkPlugin.readTags.forEach((action){
+      // _RfidReaderSdkPlugin.readTags.forEach((action){
       //   print(action);
       // });
 
       setState(() {
         connectedReader = ReaderDevice.fromJson(result);
       });
-      _zebraRfidReaderSdkPlugin.findingTag.forEach((action) {
+      _RfidReaderSdkPlugin.findingTag.forEach((action) {
         print("done1");
         print(action);
 

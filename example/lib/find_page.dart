@@ -12,7 +12,7 @@ class FindPage extends StatefulWidget {
 }
 
 class _FindPageState extends State<FindPage> {
-  final _zebraRfidReaderSdkPlugin = ZebraRfidReaderSdk();
+  final _RfidReaderSdkPlugin = ZebraRfidReaderSdk();
 
   @override
   void initState() {
@@ -23,12 +23,12 @@ class _FindPageState extends State<FindPage> {
   @override
   void dispose() {
     super.dispose();
-    _zebraRfidReaderSdkPlugin.stopFindingTheTag();
+    _RfidReaderSdkPlugin.stopFindingTheTag();
   }
 
   void listenToEvent() {
-    _zebraRfidReaderSdkPlugin.findTheTag('BDBD0134000000000013B747');
-    _zebraRfidReaderSdkPlugin.findingTag.listen((event) {
+    _RfidReaderSdkPlugin.findTheTag('BDBD0134000000000013B747');
+    _RfidReaderSdkPlugin.findingTag.listen((event) {
       final result = jsonDecode(event.toString());
 
       log(result.toString());

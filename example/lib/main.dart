@@ -20,7 +20,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final _zebraRfidReaderSdkPlugin = ZebraRfidReaderSdk();
+  final _RfidReaderSdkPlugin = ZebraRfidReaderSdk();
   List<ReaderDevice> availableReaderList = [];
   List<TagDataModel> readTags = [];
   ReaderDevice connectedReader = ReaderDevice.initial();
@@ -43,7 +43,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   void listenToReadTags() {
-    _zebraRfidReaderSdkPlugin.readTags.listen((event) {
+    _RfidReaderSdkPlugin.readTags.listen((event) {
       print("sssssssssss");
       final result = jsonDecode(event.toString());
       final readTag = TagDataModel.fromJson(result);
@@ -57,7 +57,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   void listenToEvent() {
-    _zebraRfidReaderSdkPlugin.connectedReaderDevice.listen((event) {
+    _RfidReaderSdkPlugin.connectedReaderDevice.listen((event) {
       print("done11");
       final result = jsonDecode(event.toString());
       print("done12");
@@ -65,7 +65,7 @@ class _MyAppState extends State<MyApp> {
         connectedReader = ReaderDevice.fromJson(result);
       });
       print("done13");
-      _zebraRfidReaderSdkPlugin.findingTag.forEach((action) {
+      _RfidReaderSdkPlugin.findingTag.forEach((action) {
         print("done1");
         print(action);
 
@@ -106,7 +106,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   void stopListening() {
-    _zebraRfidReaderSdkPlugin.connectedReaderDevice.listen(null);
+    _RfidReaderSdkPlugin.connectedReaderDevice.listen(null);
   }
 
   String hexToFCode(String hex) {
@@ -118,12 +118,12 @@ class _MyAppState extends State<MyApp> {
 
   Future<void> connectToZebra(String tagName) async {
     await requestAccess();
-    await _zebraRfidReaderSdkPlugin.connect(tagName);
+    await _RfidReaderSdkPlugin.connect(tagName);
   }
 
   void disconnectToZebra() async {
     await requestAccess();
-    _zebraRfidReaderSdkPlugin.disconnect();
+    _RfidReaderSdkPlugin.disconnect();
     final scaffold = ScaffoldMessenger.of(context);
     scaffold.showSnackBar(
       const SnackBar(
@@ -141,31 +141,31 @@ class _MyAppState extends State<MyApp> {
 
   Future<void> getAvailableReaderList() async {
     print("result");
-    final result = await _zebraRfidReaderSdkPlugin.getAvailableReaderList();
+    final result = await _RfidReaderSdkPlugin.getAvailableReaderList();
     setState(() {
       availableReaderList = result;
     });
   }
 
   Future<void> setAntennaPower(int value) async {
-    await _zebraRfidReaderSdkPlugin.setAntennaPower(value);
+    await _RfidReaderSdkPlugin.setAntennaPower(value);
   }
 
   Future<void> setBeeperVolume(int value) async {
-    await _zebraRfidReaderSdkPlugin.setBeeperVolume(value);
+    await _RfidReaderSdkPlugin.setBeeperVolume(value);
   }
 
   Future<void> setDynamicPower(bool value) async {
-    await _zebraRfidReaderSdkPlugin.setDynamicPower(value);
+    await _RfidReaderSdkPlugin.setDynamicPower(value);
   }
 
   Future<void> stopFindingTheTag() async {
-    await _zebraRfidReaderSdkPlugin.stopFindingTheTag();
+    await _RfidReaderSdkPlugin.stopFindingTheTag();
   }
 
   Future<void> multiplefind(List<String> tags) async {
-    await _zebraRfidReaderSdkPlugin.findTheTag(tags.first);
-    // await _zebraRfidReaderSdkPlugin.findMultipleTag(tags);
+    await _RfidReaderSdkPlugin.findTheTag(tags.first);
+    // await _RfidReaderSdkPlugin.findMultipleTag(tags);
   }
 
   @override
