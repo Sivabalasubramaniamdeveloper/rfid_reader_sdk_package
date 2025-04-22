@@ -1,0 +1,30 @@
+name: zebra_rfid_reader_sdk_example
+description: Demonstrates how to use the rfid_reader_sdk plugin.
+
+publish_to: 'none' 
+
+environment:
+  sdk: '>=2.19.2 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  rfid_reader_sdk:
+    path: ../
+  cupertino_icons: ^1.0.8
+  permission_handler: ^11.3.1
+  fluttertoast: ^8.2.12
+  flutter_screenutil: ^5.9.3
+  intl: ^0.20.2
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+

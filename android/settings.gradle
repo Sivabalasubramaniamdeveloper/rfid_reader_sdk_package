@@ -1,0 +1,2 @@
+rootProject.name = 'rfid_reader_sdk'
+include ':RFIDAPI3Library'
